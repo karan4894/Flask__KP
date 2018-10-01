@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DATA</title>
+</head>
+<body>
+<div>
+
+<fieldset>
+<table border="1px solid blue">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Affiliation</th>
+			<th>Profession</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>	
+	{% for i in register %}
+		<tr>
+		<td>{{i.name}}</td>
+		<td>{{i.affiliation}}</td>
+		<td>{{i.profession}}</td>
+		<td>{{i.email}}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+
+</table>
+
+<input action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" />
+</fieldset>
+</div>
+</body>
+</html>

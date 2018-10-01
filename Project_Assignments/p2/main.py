@@ -1,3 +1,15 @@
+'''
+Task 2
+Convert above form from plain HTML to Flask-WTForms form and add server side validation. Following validations should be added.
+Name cannot be empty
+Profession must become a dropdown with single option selectable.
+Affiliation is optional.
+E-mail must be a valid e-mail.
+Output should remain the same.
+
+'''
+
+
 from flask import Flask,render_template,redirect,request
 from flask_wtf import FlaskForm
 from wtforms import StringField,SelectField
