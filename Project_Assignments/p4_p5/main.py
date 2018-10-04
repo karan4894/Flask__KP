@@ -1,15 +1,3 @@
-'''
-#Task 4
-Create a complete new page for URL ‘/upload’. This page should display a form which will allow file to be uploaded by the user. On the Flask end, you must be able to store the file in a specific location. Where exactly the file will be stored is something you should be able to store in a configuration file or parameter. The output given to the user should be “File uploaded successfully.
-
-Task 5
-Extend the above task in do the following. Take the file uploaded by the user, count the number of lines present in the file and return an output to the user who uploaded the file saying that “Your file contains so-and-so lines”.
-'''
-
-
-
-
-
 from flask import Flask,render_template,redirect,request,url_for,flash 
 from flask_wtf import FlaskForm
 from wtforms import StringField,SelectField
@@ -86,19 +74,14 @@ def uploader():
 			file = request.files['file'] # fetches files 
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-
-			# ------------ here is the logic for counting number of lines in a file.---------
-			#--------------problem ----> how to access the save file and count lines...bit confused.
-			# ---------- Also tried os.path module and other things.
-			'''
 			num_lines = 0
-			with open('ACCESS_FILE_NAME','r') as f: #--------------how to access i.e how to provide path of file.
+			with open('/home/karan_dream/Desktop/upload_folder/doc1.txt','r') as f: 
 				for line in f:
 					num_lines = num_lines + 1
 			print(num_lines)
-			'''
+			
 			flash('File uploaded to folder')
-			return render_template('upload.html',filename=filename)
+			return render_template('upload.html',filename=filename,num_lines=num_lines)
 
 #--------------------App.run------------------------#
 if __name__ == '__main__':
