@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <style>
+         table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: left;
+         }
+      </style>
+   </head>
+   <body>
+      
+      
+		
+      <h3>Table name Student (<a href = "{{ url_for('new') }}">Add Student Information
+         </a>)</h3>
+      
+      <table style="border: solid 2px blue" >
+         <thead>
+            <tr>
+               <th>Username</th>
+               <th>Email</th>
+               <th>Affiliation</th>
+               <th>Hobby</th>
+               <th>Goals</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for student in students %}
+               <tr>
+                  <td>{{ student.username }}</td>
+                  <td>{{ student.email }}</td>
+                  <td>{{ student.affiliation }}</td>
+                  <td>{{ student.hobby }}</td>
+                  <td>{{ student.goals }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+      <div>
+         {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+      </div>
+      
+   </body>
+</html>

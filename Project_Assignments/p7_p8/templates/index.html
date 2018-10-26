@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+ 	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+<form method="POST" action="/">
+<fieldset>
+
+	{{ form.name.label }}<br>
+	{{ form.name}}<br>
+	
+
+	{{form.profession.label}}<br>
+	{{ form.profession }}<br>
+	
+
+	{{form.affiliation.label}}<br>
+	{{form.affiliation}}<br>
+	
+
+	{{form.email.label}}<br>
+	{{form.email}}<br>
+
+	{{form.password.label}}<br>
+	{{form.password}}<br>
+
+	<br>
+	<br>
+	
+  	<input type="submit" name="Submit"><br>
+  	<a href="/upload">Click here to upload a file</a>
+
+</fieldset>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+
+
+
+
+
+{% from "_formhelpers.html" import render_field %}
+<form method='post' action="/new">
+<fieldset>
+
+<p>Please enter the Student Information</p>
+  <dl>
+    {{ render_field(form.username) }}<br><br>
+    {{ render_field(form.email) }}<br><br>
+    {{ render_field(form.affiliation) }}<br><br>
+    {{ render_field(form.hobby) }}<br><br>
+    {{ render_field(form.goals) }}<br><br>
+  </dl>
+    <p><input type=submit value=Register>
+
+ </fieldset>
+</form>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload</title>
+</head>
+<body>
+<fieldset>
+<form action="/uploader" method="POST" enctype="multipart/form-data">
+<input type="file" name="file">
+<input type="submit" value="Save">
+<input type="button" onclick="location.href='/';" value="Home" />
+
+
+
+<p>Name of file uploaded in Upload_Folder <b>{{filename}}</b></p>
+<p>Number of lines in file is <b>{{num_lines}}</b></p>
+
+
+
+<!--Flash messages display -->
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages%}
+			<h3>{{message}}</h3>
+		{% endfor%}
+	{% endif %}
+
+{% endwith %}
+
+
+
+</form>
+</fieldset>
+</body>
+</html>
